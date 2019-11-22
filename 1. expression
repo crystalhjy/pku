@@ -1,0 +1,23 @@
+#include<iostream>
+#include<stdlib.h>
+#include<iomanip>
+using namespace std;
+
+double calculate()
+{
+	char str[100];
+	cin >> str;
+	switch (str[0])
+	{
+	case'+':return calculate() + calculate();
+	case'-':return calculate() - calculate();
+	case'*':return calculate() * calculate();
+	case'/':return calculate() / calculate();
+	default:return atof(str);
+	}
+}
+int main()
+{
+	cout << fixed << setprecision(6) << calculate() << endl;
+	return 0;
+}
